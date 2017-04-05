@@ -8,6 +8,12 @@ function blog_SelectAuthentication()
     return sql_Query($sql);
 }
 
+function blog_InsertItems()
+{
+    $sql = "SELECT * FROM article";
+    return sql_QueryArticl($sql);
+}
+
 function blog_Insert($postName, $postData, $postText, $postFile)
 {
     $sql = "
@@ -38,4 +44,24 @@ function blog_SelectArticle($id)
 {
     $sql = "SELECT * FROM article WHERE id='" . $id . "'";
     return sql_QueryArticl($sql);
+}
+
+function blog_Update($postName, $postData, $postText, $postId)
+{
+    $sql = "
+        UPDATE article
+        SET articleName='" . $postName . "', articleData='" . $postData . "', article='" . $postText . "'
+        WHERE id='" . $postId . "'
+        ";
+    sql_Update($sql);
+}
+
+function blog_UpdateAndFile($postName, $postData, $postText, $postFile, $postId)
+{
+    $sql = "
+        UPDATE article
+        SET articleName='" . $postName . "', articleData='" . $postData . "', article='" . $postText . "', path='" . $postFile . "'
+        WHERE id='" . $postId . "'
+        ";
+    sql_UpdateAndFile($sql);
 }

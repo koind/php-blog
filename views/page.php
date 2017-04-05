@@ -10,23 +10,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title>Euclid Free Responsive Html5 Themes</title>
 
-<link rel='stylesheet' id='reset-css'  href='css/reset.css' type='text/css' media='all' />
-<link rel='stylesheet' id='superfish-css'  href='css/superfish.css' type='text/css' media='all' />
-<link rel='stylesheet' id='fontawsome-css'  href='css/font-awsome/css/font-awesome.css' type='text/css' media='all' />
-<link rel='stylesheet' id='orbit-css-css'  href='css/orbit.css' type='text/css' media='all' />
-<link rel='stylesheet' id='style-css'  href='css/style.css' type='text/css' media='all' />
-<link rel='stylesheet' id='color-scheme-css'  href='css/color/green.css' type='text/css' media='all' />
-<link rel="stylesheet" href="css/zerogrid.css" type="text/css" media="screen">
-<link rel="stylesheet" href="css/responsive.css" type="text/css" media="screen">
-<script type='text/javascript' src='js/jquery.js'></script>
-<script type='text/javascript' src='js/jquery-migrate.min.js'></script>
-<script type='text/javascript' src='js/jquery-1.10.2.min.js'></script>
-<script type='text/javascript' src='js/jquery.carouFredSel-6.2.1-packed.js'></script>
-<script type='text/javascript' src='js/hoverIntent.js'></script>
-<script type='text/javascript' src='js/superfish.js'></script>
-<script type='text/javascript' src='js/orbit.min.js'></script>
-<script type='text/javascript' src='js/comment-reply.min.js'></script>
- <script src="js/css3-mediaqueries.js"></script>
+<link rel='stylesheet' id='reset-css'  href='views/css/reset.css' type='text/css' media='all' />
+<link rel='stylesheet' id='superfish-css'  href='views/css/superfish.css' type='text/css' media='all' />
+<link rel='stylesheet' id='fontawsome-css'  href='views/css/font-awsome/css/font-awesome.css' type='text/css' media='all' />
+<link rel='stylesheet' id='orbit-css-css'  href='views/css/orbit.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='views/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='color-scheme-css'  href='views/css/color/green.css' type='text/css' media='all' />
+<link rel="stylesheet" href="views/css/zerogrid.css" type="text/css" media="screen">
+<link rel="stylesheet" href="views/css/responsive.css" type="text/css" media="screen">
+<script type='text/javascript' src='views/js/jquery.js'></script>
+<script type='text/javascript' src='views/js/jquery-migrate.min.js'></script>
+<script type='text/javascript' src='views/js/jquery-1.10.2.min.js'></script>
+<script type='text/javascript' src='views/js/jquery.carouFredSel-6.2.1-packed.js'></script>
+<script type='text/javascript' src='views/js/hoverIntent.js'></script>
+<script type='text/javascript' src='views/js/superfish.js'></script>
+<script type='text/javascript' src='views/js/orbit.min.js'></script>
+<script type='text/javascript' src='views/js/comment-reply.min.js'></script>
+ <script src="views/js/css3-mediaqueries.js"></script>
 <script type="text/javascript" language="javascript">
 	$(function() {
 		
@@ -70,22 +70,16 @@
         	<div id="header-nav-container">
             
                     <a href="#">
-                    <img src="images/logo.png" id="logo" />
+                    <img src="views/images/logo.png" id="logo" />
                     </a>
                     
 					<!-- Navigation Menu -->
                     
-	<ul class="sf-menu"><li class="menu-item"><a href="index.html">Home</a></li>
-	<li class="menu-item current-menu-item"><a href="blog.html">Blog</a></li>
-<li class="menu-item"><a href="#">Features</a>
-<ul class="sub-menu">
-	<li class="menu-item"><a href="#">Menu 01</a></li>
-	<li class="menu-item"><a href="#">Menu 02</a></li>
-	<li class="menu-item"><a href="#">Menu 03</a></li>
-</ul>
-</li>
-<li class="menu-item"><a href="about.html">About us</a></li>
-</ul>	
+                    <ul class="sf-menu">
+                        <li class="menu-item"><a href="index.php">Главая</a></li>
+                        <li class="menu-item"><a href="about.php">Об Авторе</a></li>
+                        <li class="menu-item"><a href="login.php">Вход</a></li>
+                    </ul>
                     <!-- End Navigation Menu -->
                     
                     <div class="clear"></div>
@@ -106,9 +100,8 @@
         <div class="col-2-3" id="post-container">
         	<div class="wrap-col">
             
-            
-            
-                    	<!-- Start Post Item -->
+            <?php foreach ($items as $val) : ?>
+                <!-- Start Post Item -->
             <div class="post">
             	<div class="post-margin">
                 
@@ -116,17 +109,17 @@
                     <div class="avatar-frame"></div>
                     <img alt='' src='http://1.gravatar.com/avatar/16afd22c8bf5c2398b206a76c9316a3c?s=70&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D70&amp;r=G' class='avatar avatar-70 photo' height='70' width='70' />                </div>
                 
-                <h4>The Lighthouse Effect</h4>
+                <h4><?php echo $val["articleName"]; ?></h4>
                 	<ul class="post-status">
-                    <li><i class="fa fa-clock-o"></i>December 13, 2013</li>
-                    <li><i class="fa fa-folder-open-o"></i><a href="#" title="View all posts in Illustration" rel="category">Illustration</a></li>
-                    <li><i class="fa fa-comment-o"></i>No Comments</li>
+                    <li>Дата создания: <i class="fa fa-clock-o"></i><?php echo $val["articleData"]; ?></li>
+<!--                    <li><i class="fa fa-folder-open-o"></i><a href="#" title="View all posts in Illustration" rel="category">Illustration</a></li>-->
+<!--                    <li><i class="fa fa-comment-o"></i>No Comments</li>-->
                     </ul>
                     <div class="clear"></div>
                 </div>
                 
            <div class="featured-image">
-                    <img src="img/Port_Harbor1-610x350.jpg" class="attachment-post-standard "  />                    
+                    <img src="<?php echo $val["path"]; ?>" class="attachment-post-standard "  />
                     <div class="post-icon">
                     <span class="fa-stack fa-lg">
                       <i class="fa fa-circle fa-stack-2x"></i>
@@ -136,10 +129,7 @@
                     </div>
             
             <div class="post-margin">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet auctor ligula. Donec eu placerat lacus, pellentesque tincidunt felis. Aliquam dictum cursus elit, et sagittis nibh tincidunt quis. Vestibulum leo dui, ullamcorper quis erat nec, accumsan imperdiet ligula. Maecenas ut dui sed arcu sodales consequat. Nulla et est ac lacus congue volutpat. Aliquam vehicula tincidunt sem eget cursus. Nam sed mollis diam. Pellentesque id felis ut diam dignissim egestas id non ipsum.</p>
-<p>Ut id magna eu eros vehicula sollicitudin at et odio. Mauris consectetur tortor in mauris aliquet feugiat. Etiam et elit arcu. Donec quis ante odio. Duis eros mauris, blandit eu tempor at, vulputate vel libero. Ut convallis metus ut magna accumsan, id consectetur metus laoreet. Sed in dolor non erat vulputate venenatis et venenatis elit. Aenean arcu turpis, aliquam non dictum sed, vehicula sed ligula. Praesent consequat eleifend ligula et faucibus. Vivamus id odio et lectus pretium mollis. Phasellus venenatis laoreet est, non dictum nisi porta eu.</p>
-<p>Integer auctor, mauris vel consequat viverra, nibh arcu elementum odio, ut varius arcu sapien vitae ligula. Fusce erat metus, cursus nec felis eget, vulputate vulputate turpis. Nulla iaculis venenatis magna, lobortis egestas magna faucibus mollis. Quisque molestie turpis dolor, blandit convallis elit pellentesque eu. Nam sit amet enim a est congue vestibulum eget id leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus sit amet ipsum eros. Etiam faucibus sapien turpis, vitae sagittis tellus faucibus quis.</p>
-
+            <p><?php echo $val["article"]; ?></p>
 			<!-- Post Tags -->
             
             <div class="post-tags">
@@ -166,70 +156,70 @@
             <div class="clear"></div>
             </div>
             <!-- End Post Item -->
-            
-            
-                        
-            
+
+            <?php endforeach; ?>
+
+
 <div class="post">
     <div class="post-margin">
-        
+
     <!-- Start Related Item -->
     <div class="related-posts">
-    
+
     <div class="post-avatar">
     <div class="avatar-frame"></div>
-    <img width="70" height="70" src="img/one-more-beer-70x70.png" class="attachment-post-widget #"  />    </div>
-    
-    <div class="related-posts-aligned">            
+    <img width="70" height="70" src="views/img/one-more-beer-70x70.png" class="attachment-post-widget #"  />    </div>
+
+    <div class="related-posts-aligned">
 	<h6><a href="#">One More Beer</a></h6>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet auctor ligula. Donec eu</p>
     <div class="clear"></div>
     </div>
-    
+
     <div class="clear"></div>
     </div>
     <!-- End Related Item -->
-    
-        
+
+
     <!-- Start Related Item -->
     <div class="related-posts">
-    
+
     <div class="post-avatar">
     <div class="avatar-frame"></div>
-    <img width="70" height="70" src="img/Port_Harbor1-70x70.jpg" class="attachment-post-widget #"  />    </div>
-    
-    <div class="related-posts-aligned">            
+    <img width="70" height="70" src="views/img/Port_Harbor1-70x70.jpg" class="attachment-post-widget #"  />    </div>
+
+    <div class="related-posts-aligned">
 	<h6><a href="#">Port Harbor</a></h6>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet auctor ligula. Donec eu</p>
     <div class="clear"></div>
     </div>
-    
+
     <div class="clear"></div>
     </div>
     <!-- End Related Item -->
-    
-        
+
+
     <!-- Start Related Item -->
     <div class="related-posts">
-    
+
     <div class="post-avatar">
     <div class="avatar-frame"></div>
-    <img width="70" height="70" src="img/Timothy-J-Reynolds-2560x14401-70x70.jpg" class="attachment-post-widget #"  />    </div>
-    
-    <div class="related-posts-aligned">            
+    <img width="70" height="70" src="views/img/Timothy-J-Reynolds-2560x14401-70x70.jpg" class="attachment-post-widget #"  />    </div>
+
+    <div class="related-posts-aligned">
 	<h6><a href="#">Underground Volcano</a></h6>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet auctor ligula. Donec eu</p>
     <div class="clear"></div>
     </div>
-    
+
     <div class="clear"></div>
     </div>
     <!-- End Related Item -->
-    
+
         <div class="clear"></div>
     </div>
-</div>            
-            
+</div>
+
 			<!-- Comments -->
             <div class="comment-container">
             
@@ -290,7 +280,7 @@
                 <li>
                 <div class="post-image">
                 <div class="post-mask"></div>
-                <img width="70" height="70" src="img/HighRes-70x70.jpg" class="attachment-post-widget #"  />                </div>
+                <img width="70" height="70" src="views/img/HighRes-70x70.jpg" class="attachment-post-widget #"  />                </div>
                 
                 <h6><a href="#">The Lighthouse Effect</a></h6>
                 <span>November 02, 2013</span>
@@ -301,7 +291,7 @@
                 <li>
                 <div class="post-image">
                 <div class="post-mask"></div>
-                <img width="70" height="70" src="img/one-more-beer-70x70.png" class="attachment-post-widget #"  />                </div>
+                <img width="70" height="70" src="views/img/one-more-beer-70x70.png" class="attachment-post-widget #"  />                </div>
                 
                 <h6><a href="#">One More Beer</a></h6>
                 <span>November 02, 2013</span>
@@ -312,7 +302,7 @@
                 <li>
                 <div class="post-image">
                 <div class="post-mask"></div>
-                <img width="70" height="70" src="img/Port_Harbor1-70x70.jpg" class="attachment-post-widget #"  />                </div>
+                <img width="70" height="70" src="views/img/Port_Harbor1-70x70.jpg" class="attachment-post-widget #"  />                </div>
                 
                 <h6><a href="#">Port Harbor</a></h6>
                 <span>November 02, 2013</span>
@@ -323,7 +313,7 @@
                 <li>
                 <div class="post-image">
                 <div class="post-mask"></div>
-                <img width="70" height="70" src="img/Timothy-J-Reynolds-2560x14401-70x70.jpg" class="attachment-post-widget #"  />                </div>
+                <img width="70" height="70" src="views/img/Timothy-J-Reynolds-2560x14401-70x70.jpg" class="attachment-post-widget #"  />                </div>
                 
                 <h6><a href="#">Underground Volcano</a></h6>
                 <span>November 02, 2013</span>
@@ -355,11 +345,11 @@
         <div id="footer-container" class="col-full">
         <div class="wrap-col">	
             <!-- Footer Copyright -->
-            <p>Copyrigh &copy; 2014 <a href="http://bayguzin.ru/">Bayguzin.ru</a> All Rights Reserved.</p>
+            <p>Copyrigh &copy; 2017 </p>
             <!-- End Footer Copyright -->
             
             <!-- Footer Logo -->
-			<img src="images/footer-logo.png" id="footer-logo" />
+			<img src="views/images/footer-logo.png" id="footer-logo" />
             <!-- End Footer Logo -->
         
         <div class="clear"></div>

@@ -43,3 +43,15 @@ function sql_Delete($sql)
     sql_Connect();
     mysql_query($sql);
 }
+
+function sql_Update($sql)
+{
+    sql_Connect();
+    mysql_query($sql);
+}
+
+function sql_UpdateAndFile($sql)
+{
+    sql_Connect();
+    mysql_query($sql);
+}

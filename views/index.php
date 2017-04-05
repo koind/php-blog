@@ -229,6 +229,7 @@
  			<div class="wrap-col">
                  
         	<!-- Start Post Item -->
+            <?php foreach ($items as $val) : ?>
             <div class="post">
             	<div class="post-margin">
                 
@@ -236,9 +237,9 @@
                     <div class="avatar-frame"></div>
                     <img alt='' src='http://1.gravatar.com/avatar/16afd22c8bf5c2398b206a76c9316a3c?s=70&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D70&amp;r=G' class='avatar avatar-70 photo' height='70' width='70' />                </div>
                 
-                <h4 class="post-title"><a href="#">Port Harbor</a></h4>
+                <h4 class="post-title"><a href="page.php?id=<?php echo $val["id"]; ?>"><?php echo $val["articleName"]; ?></a></h4>
                 	<ul class="post-status">
-                    <li><i class="fa fa-clock-o"></i>December 13, 2013</li>
+                    <li>Дата создания: <i class="fa fa-clock-o"></i><?php echo $val["articleData"]; ?></li>
 <!--                    <li><i class="fa fa-folder-open-o"></i><a href="#" title="View all posts in Illustration" rel="category">Illustration</a></li>-->
 <!--                    <li><i class="fa fa-comment-o"></i>No Comments</li>-->
                     </ul>
@@ -246,7 +247,7 @@
                 </div>
                 
             		                    <div class="featured-image">
-                    <img src="views/img/Port_Harbor1-610x350.jpg" class="attachment-post-standard "  />
+                    <img src="<?php echo $val["path"]; ?>." class="attachment-post-standard "  />
                     <div class="post-icon">
                     <span class="fa-stack fa-lg">
                       <i class="fa fa-circle fa-stack-2x"></i>
@@ -256,21 +257,18 @@
                     </div>
                                 
             <div class="post-margin">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet auctor ligula.
-                Donec eu placerat lacus, pellentesque tincidunt felis.
-                Aliquam dictum cursus elit, et sagittis nibh tincidunt quis.
-                Vestibulum leo dui, ullamcorper quis erat nec, accumsan imperdiet ligula.
-            </p>
+            <p><?php echo substr($val["article"], 0, 300) . ' ...'; ?></p>
             </div>
             
              <ul class="post-social">
                 <li>
-                    <a href="#" class="readmore">Читать дальше <i class="fa fa-arrow-circle-o-right"></i></a>
+                    <a href="page.php?id=<?php echo $val["id"]; ?>" class="readmore">Читать дальше <i class="fa fa-arrow-circle-o-right"></i></a>
                 </li>
             </ul>
             
             <div class="clear"></div>
             </div>
+            <?php endforeach; ?>
             <!-- End Post Item -->
             
 

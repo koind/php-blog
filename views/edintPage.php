@@ -39,6 +39,7 @@
                 <img src="views/images/logo.png" id="logo" />
                 <!-- Navigation Menu -->
                 <ul class="sf-menu">
+                    <li class="menu-item"><a href="admin.php">Главная</a></li>
                     <li class="menu-item"><a href="?exit=1">Выход</a></li>
                 </ul>
                 <!-- End Navigation Menu -->
@@ -66,8 +67,8 @@
             <?php foreach ($resArr as $item) { ?>
             <div class="post">
                 <div class="post-margin addForms">
-                    <h3>Добавить новую статью</h3><br>
-                    <form action="editPage.php" method="post" enctype="multipart/form-data">
+                    <h3>Редактировать статью</h3><br>
+                    <form action="editPage.php?change=<?php echo $item["id"]; ?>" method="post" enctype="multipart/form-data">
                         <label for="postName">Введите название</label>
                         <input type="text" id="postName" class="inputForm" name="postName" required value="<?php echo $item["articleName"]; ?>">
                         <label for="postData">Введите дату</label>
@@ -78,9 +79,9 @@
                         <img src="<?php echo $item["path"]; ?>" class="attachment-post-standard " width="600" /><br><br>
                         <hr>
                         <label for="postFile">Изменить текущую картинку на новую</label><br><br>
-                        <input type="file" name="postFile" id="postFile" required>
+                        <input type="file" name="postFile" id="postFile">
                         <input type="hidden" name="id" value="<?php echo $item["id"]; ?>"" required>
-                        <button>Добавить статью</button>
+                        <button type="submit">Добавить статью</button>
                     </form>
                 </div>
 

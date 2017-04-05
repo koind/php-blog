@@ -10,22 +10,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title>Euclid Free Responsive Html5 Themes</title>
 
-<link rel='stylesheet' id='reset-css'  href='css/reset.css' type='text/css' media='all' />
-<link rel='stylesheet' id='superfish-css'  href='css/superfish.css' type='text/css' media='all' />
-<link rel='stylesheet' id='fontawsome-css'  href='css/font-awsome/css/font-awesome.css' type='text/css' media='all' />
-<link rel='stylesheet' id='orbit-css-css'  href='css/orbit.css' type='text/css' media='all' />
-<link rel='stylesheet' id='style-css'  href='css/style.css' type='text/css' media='all' />
-<link rel='stylesheet' id='color-scheme-css'  href='css/color/green.css' type='text/css' media='all' />
-<link rel="stylesheet" href="css/zerogrid.css" type="text/css" media="screen">
-<link rel="stylesheet" href="css/responsive.css" type="text/css" media="screen">
-<script type='text/javascript' src='js/jquery.js'></script>
-<script type='text/javascript' src='js/jquery-migrate.min.js'></script>
-<script type='text/javascript' src='js/jquery-1.10.2.min.js'></script>
-<script type='text/javascript' src='js/jquery.carouFredSel-6.2.1-packed.js'></script>
-<script type='text/javascript' src='js/hoverIntent.js'></script>
-<script type='text/javascript' src='js/superfish.js'></script>
-<script type='text/javascript' src='js/orbit.min.js'></script>
- <script src="js/css3-mediaqueries.js"></script>
+<link rel='stylesheet' id='reset-css'  href='views/css/reset.css' type='text/css' media='all' />
+<link rel='stylesheet' id='superfish-css'  href='views/css/superfish.css' type='text/css' media='all' />
+<link rel='stylesheet' id='fontawsome-css'  href='views/css/font-awsome/css/font-awesome.css' type='text/css' media='all' />
+<link rel='stylesheet' id='orbit-css-css'  href='views/css/orbit.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='views/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='color-scheme-css'  href='views/css/color/green.css' type='text/css' media='all' />
+<link rel="stylesheet" href="views/css/zerogrid.css" type="text/css" media="screen">
+<link rel="stylesheet" href="views/css/responsive.css" type="text/css" media="screen">
+<script type='text/javascript' src='views/js/jquery.js'></script>
+<script type='text/javascript' src='views/js/jquery-migrate.min.js'></script>
+<script type='text/javascript' src='views/js/jquery-1.10.2.min.js'></script>
+<script type='text/javascript' src='views/js/jquery.carouFredSel-6.2.1-packed.js'></script>
+<script type='text/javascript' src='views/js/hoverIntent.js'></script>
+<script type='text/javascript' src='views/js/superfish.js'></script>
+<script type='text/javascript' src='views/js/orbit.min.js'></script>
+<script type='text/javascript' src='views/js/comment-reply.min.js'></script>
+<script src="views/js/css3-mediaqueries.js"></script>
 </head>
 
 <body class="page page-id-56 page-template-default">
@@ -36,22 +37,17 @@
         	<div id="header-nav-container">
             
                     <a href="#">
-                    <img src="images/logo.png" id="logo" />
+                    <img src="views/images/logo.png" id="logo" />
                     </a>
                     
 					<!-- Navigation Menu -->
-                    
-	<ul class="sf-menu"><li class="menu-item"><a href="index.html">Home</a></li>
-	<li class="menu-item"><a href="blog.html">Blog</a></li>
-<li class="menu-item"><a href="#">Features</a>
-<ul class="sub-menu">
-	<li class="menu-item"><a href="#">Menu 01</a></li>
-	<li class="menu-item"><a href="#">Menu 02</a></li>
-	<li class="menu-item"><a href="#">Menu 03</a></li>
-</ul>
-</li>
-<li class="menu-item current-menu-item"><a href="about.html">About us</a></li>
-</ul>	
+
+                    <ul class="sf-menu">
+                        <li class="menu-item"><a href="index.php">Главая</a></li>
+                        <li class="menu-item"><a href="about.php">Об Авторе</a></li>
+                        <li class="menu-item"><a href="login.php">Вход</a></li>
+                    </ul>
+
                     <!-- End Navigation Menu -->
                     
                     <div class="clear"></div>
@@ -97,11 +93,11 @@
         <div id="footer-container" class="col-full">
         <div class="wrap-col">	
             <!-- Footer Copyright -->
-            <p>Copyrigh &copy; 2014 <a href="http://bayguzin.ru/">Bayguzin.ru</a> All Rights Reserved.</p>
+            <p>Copyrigh &copy; 2017 </p>
             <!-- End Footer Copyright -->
             
             <!-- Footer Logo -->
-			<img src="images/footer-logo.png" id="footer-logo" />
+			<img src="views/images/footer-logo.png" id="footer-logo" />
             <!-- End Footer Logo -->
         
         <div class="clear"></div>

@@ -23,18 +23,17 @@ if (!empty($_SESSION['userInfo'])) {
             $postText = trim(strip_tags($_POST["postText"]));
             $postId = trim(strip_tags($_POST["id"]));
 
-
-            if (!empty($_FILES)) {
+            if (!empty($_FILES["postFile"]["error"] == 0)) {
                 $postFile = filePath('postFile');
 
                 if (isset($postId) && isset($postName) && isset($postData) && isset($postText) && isset($postFile)) {
-                    blog_Insert($postName, $postData, $postText, $postFile);
+                    blog_UpdateAndFile($postName, $postData, $postText, $postFile, $postId);
                     header('Location: /php-blog/admin.php');
                     die;
                 }
             } else {
                 if (isset($postId) && isset($postName) && isset($postData) && isset($postText)) {
-                    blog_Insert($postName, $postData, $postText, $postId);
+                    blog_Update($postName, $postData, $postText, $postId);
                     header('Location: /php-blog/admin.php');
                     die;
                 }

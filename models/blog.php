@@ -5,7 +5,7 @@ require_once __DIR__ . "/../functions/sql.php";
 function blog_SelectAuthentication()
 {
     $sql = "SELECT login, password FROM authentication";
-    return sql_Query($sql);
+    return sql_QueryArticl($sql);
 }
 
 function blog_InsertItems()
@@ -22,7 +22,7 @@ function blog_Insert($postName, $postData, $postText, $postFile)
         VALUES
         ('" . $postName . "', '" . $postData . "', '" . $postText . "', '" . $postFile . "')
     ";
-    sql_Insert($sql);
+    sql_Inquiries($sql);
 }
 
 function blog_SelectAdminList()
@@ -37,7 +37,7 @@ function blog_Delete($id)
             DELETE FROM article
             WHERE id='" . $id . "'
             ";
-    sql_Delete($sql);
+    sql_Inquiries($sql);
 }
 
 function blog_SelectArticle($id)
@@ -53,7 +53,7 @@ function blog_Update($postName, $postData, $postText, $postId)
         SET articleName='" . $postName . "', articleData='" . $postData . "', article='" . $postText . "'
         WHERE id='" . $postId . "'
         ";
-    sql_Update($sql);
+    sql_Inquiries($sql);
 }
 
 function blog_UpdateAndFile($postName, $postData, $postText, $postFile, $postId)
@@ -63,5 +63,5 @@ function blog_UpdateAndFile($postName, $postData, $postText, $postFile, $postId)
         SET articleName='" . $postName . "', articleData='" . $postData . "', article='" . $postText . "', path='" . $postFile . "'
         WHERE id='" . $postId . "'
         ";
-    sql_UpdateAndFile($sql);
+    sql_Inquiries($sql);
 }

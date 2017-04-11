@@ -71,8 +71,8 @@
         <input type="text" name="login" placeholder="Введите Ваш логин" class="comment-name" required>
         <input type="password" name="password" placeholder="Введите Ваш пароль" class="comment-name" required>
         <input type="submit" id="comment-submit" value="Продолжить" />
-        <?php if (!empty($error)) : ?>
-        <p class="error"><?php echo $error; ?></p>
+        <?php if (!empty($login->error)) : ?>
+        <p class="error"><?php echo $login->error; ?></p>
         <?php endif; ?>
     </form>
 </div>

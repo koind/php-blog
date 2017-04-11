@@ -1,17 +1,8 @@
 <?php
 
-require_once __DIR__ . "/models/blog.php";
+require_once __DIR__ . "/class/Page.php";
 
-if (!empty($_GET["id"])) {
-    $id = $_GET["id"];
-
-    if (false !== blog_SelectArticle($id)) {
-        $items = blog_SelectArticle($id);
-    } else {
-        $items = [];
-        $items["articleName"] = "Нет такой статьи";
-        $items["article"] = "Нет такой статьи";
-    }
-}
+$items = new Page();
+$items->item;
 
 require_once __DIR__ . '/views/page.php';

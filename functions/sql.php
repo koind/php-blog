@@ -6,25 +6,6 @@ function sql_Connect()
     mysql_select_db('blog');
 }
 
-function sql_Query($sql)
-{
-    sql_Connect();
-    $rel = mysql_query($sql);
-    $row = mysql_fetch_assoc($rel);
-
-    if (false !== $row) {
-        return $row;
-    } else {
-        return false;
-    }
-}
-
-function sql_Insert($sql)
-{
-    sql_Connect();
-    $rel = mysql_query($sql);
-}
-
 function sql_QueryArticl($sql)
 {
     sql_Connect();
@@ -38,20 +19,8 @@ function sql_QueryArticl($sql)
     return $arr;
 }
 
-function sql_Delete($sql)
+function sql_Inquiries($sql)
 {
     sql_Connect();
-    mysql_query($sql);
-}
-
-function sql_Update($sql)
-{
-    sql_Connect();
-    mysql_query($sql);
-}
-
-function sql_UpdateAndFile($sql)
-{
-    sql_Connect();
-    mysql_query($sql);
+    $rel = mysql_query($sql);
 }
